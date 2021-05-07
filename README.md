@@ -174,4 +174,42 @@ md0 : active raid5 sde[6] sdf[5] sdd[2] sdc[1] sdb[0]
       
 unused devices: <none>
 ```
+
+## Создать GPT раздел, пять партиций и смонтировать их на диск
+
+Создаем раздел GPT на RAID
+
+[root@otuslinux vagrant]#  parted -s /dev/md0 mklabel gpt
+
+Создаем партиции
+
+```console
+[root@otuslinux vagrant]# parted /dev/md0 mkpart primary ext4 0% 20%
+Information: You may need to update /etc/fstab.
+
+[root@otuslinux vagrant]# parted /dev/md0 mkpart primary ext4 20% 40%     
+Information: You may need to update /etc/fstab.
+
+[root@otuslinux vagrant]# parted /dev/md0 mkpart primary ext4 40% 60%     
+Information: You may need to update /etc/fstab.
+
+[root@otuslinux vagrant]# parted /dev/md0 mkpart primary ext4 60% 80%     
+Information: You may need to update /etc/fstab.
+
+[root@otuslinux vagrant]# parted /dev/md0 mkpart primary ext4 80% 100%    
+Information: You may need to update /etc/fstab.
+```
+
+Далее можно создать на этих партициях ФС
+
+```console
+[root@otuslinux vagrant]# for i in $(seq 1 5); do sudo mkfs.ext4 /dev/md0p$i; done
+```
+
+И смонтировать их по каталогам
+
+
+```console 
+[root@otuslinux vagrant]# mkdir -p /raid/part{1,2,3,4,5}
+[root@otuslinux vagrant]# for i in $(seq 1 5); do mount /dev/md0p$i /raid/part$i; done
 ```
