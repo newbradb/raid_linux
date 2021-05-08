@@ -213,3 +213,7 @@ Information: You may need to update /etc/fstab.
 [root@otuslinux vagrant]# mkdir -p /raid/part{1,2,3,4,5}
 [root@otuslinux vagrant]# for i in $(seq 1 5); do mount /dev/md0p$i /raid/part$i; done
 ```
+
+## Пишем баш скрипт для конфигурации рейда
+
+Просто обьединяем команды по созданию рейда и mdadm.conf файла в баш скрипт bash.sh 
