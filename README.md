@@ -44,7 +44,7 @@ mdadm: Unrecognised md component device - /dev/sde
 mdadm: Unrecognised md component device - /dev/sdf
 
 ```
-##Создание Raid
+## Создание Raid
 
 Создадим Raid5 следуещей командой: 
 
