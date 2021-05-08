@@ -44,6 +44,8 @@ mdadm: Unrecognised md component device - /dev/sde
 mdadm: Unrecognised md component device - /dev/sdf
 
 ```
+##Создание Raid
+
 Создадим Raid5 следуещей командой: 
 
 ```console
@@ -216,4 +218,6 @@ Information: You may need to update /etc/fstab.
 
 ## Пишем баш скрипт для конфигурации рейда
 
-Просто обьединяем команды по созданию рейда и mdadm.conf файла в баш скрипт bash.sh 
+Просто обьединяем команды по созданию рейда и mdadm.conf файла в баш скрипт [bash.sh](https://github.com/newbradb/raid_linux/blob/main/raid.sh)
+
+ 
