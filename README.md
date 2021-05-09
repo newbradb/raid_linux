@@ -218,6 +218,13 @@ Information: You may need to update /etc/fstab.
 
 ## Пишем баш скрипт для конфигурации рейда
 
-Просто обьединяем команды по созданию рейда и mdadm.conf файла в баш скрипт [bash.sh](https://github.com/newbradb/raid_linux/blob/main/raid.sh)
+Просто обьединяем команды по созданию рейда и mdadm.conf файла в баш скрипт [bash.sh](https://github.com/newbradb/raid_linux/blob/main/raid.sh)  
+
+Добавляем в Vargantfile :
+
+```console
+  	  SHELL
+          box.vm.provision "shell", path: "raid.sh"
+```
 
  
