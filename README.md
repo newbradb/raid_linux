@@ -1,5 +1,13 @@
 # raid_linux
 
+## Homework 2
+
+Vagrangile [тут](https://github.com/newbradb/raid_linux/blob/main/Vagrantfile)
+
+Скрипт для создания рейда [тут](https://github.com/newbradb/raid_linux/blob/main/raid.sh)
+
+Шаги ниже в README 
+
 ## Добавить в Vagrantfile еще дисков
 
 Начальный Vagrantfile берем из этого [репозитория](https://github.com/erlong15/otus-linux)  
